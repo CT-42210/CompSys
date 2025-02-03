@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from collections import deque
 
-df1 = pd.read_csv('testAdjacency.csv', index_col=0)
+df1 = pd.read_csv('grainWorldAdjacency.csv', index_col=0)
 df2 = pd.DataFrame(0, index=df1.index, columns=df1.columns)
 
 
@@ -30,4 +30,4 @@ for row_label in df1.index:
     for col_label in df1.columns:
         df2.loc[row_label, col_label] = shortest_path_bfs(df1, row_label, col_label)
 
-df2.to_csv('testCentrality.csv')
+df2.to_csv('grainWorldCentrality.csv')
